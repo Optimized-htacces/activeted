@@ -1,11 +1,10 @@
-# BEGIN WpFastestCache
+# BEGIN WordPress
+# Created by Ali Çömez 
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
 RewriteCond %{HTTPS} =on
 RewriteCond %{HTTP_HOST} ^alicomez.com
-# Start WPFC Exclude
-# End WPFC Exclude
 RewriteCond %{HTTP_USER_AGENT} !(facebookexternalhit|WhatsApp|Mediatoolkitbot)
 RewriteCond %{REQUEST_METHOD} !POST
 RewriteCond %{REQUEST_URI} !(\/){2}$
@@ -27,8 +26,6 @@ Header set Pragma "no-cache"
 Header set Expires "Mon, 29 Oct 1923 20:30:00 GMT"
 </ifModule>
 </FilesMatch>
-# END WpFastestCache
-# BEGIN GzipWpFastestCache
 <IfModule mod_deflate.c>
 AddType x-font/woff .woff
 AddOutputFilterByType DEFLATE image/svg+xml
@@ -46,8 +43,6 @@ AddOutputFilterByType DEFLATE application/x-font-ttf
 AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
 AddOutputFilterByType DEFLATE font/opentype font/ttf font/eot font/otf
 </IfModule>
-# END GzipWpFastestCache
-# BEGIN LBCWpFastestCache
 <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|x-html|css|xml|js|woff|woff2|ttf|svg|eot)(\.gz)?$">
 <IfModule mod_expires.c>
 ExpiresActive On
@@ -70,16 +65,12 @@ Header set Connection keep-alive
 FileETag None
 </IfModule>
 </FilesMatch>
-# END LBCWpFastestCache
-# BEGIN WpFastestCache
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
 RewriteEngine On
 RewriteCond %{SERVER_PORT} !=443
 RewriteRule ^ https://alicomez.com%{REQUEST_URI} [NS,R,L]
-# Start WPFC Exclude
-# End WPFC Exclude
 RewriteCond %{HTTP_USER_AGENT} !(facebookexternalhit)
 RewriteCond %{REQUEST_METHOD} !POST
 RewriteCond %{REQUEST_URI} !(\/){2}$
@@ -101,7 +92,6 @@ Header set Pragma "no-cache"
 Header set Expires "Mon, 29 Oct 1923 20:30:00 GMT"
 </ifModule>
 </FilesMatch>
-# BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
@@ -110,5 +100,9 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
-
+# BEGIN Kötü bot engelleyici
+SetEnvIfNoCase User-Agent "Abonti|aggregator|AhrefsBot|asterias|BDCbot|BLEXBot|BuiltBotTough|Bullseye|BunnySlippers|ca\-crawler|CCBot|Cegbfeieh|CheeseBot|CherryPicker|CopyRightCheck|cosmos|Crescent|discobot|DittoSpyder|DotBot|Download Ninja|EasouSpider|EmailCollector|EmailSiphon|EmailWolf|EroCrawler|Exabot|ExtractorPro|Fasterfox|FeedBooster|Foobot|Genieo|grub\-client|Harvest|hloader|httplib|HTTrack|humanlinks|ieautodiscovery|InfoNaviRobot|IstellaBot|Java/1\.|JennyBot|k2spider|Kenjin Spider|Keyword Density/0\.9|larbin|LexiBot|libWeb|libwww|LinkextractorPro|linko|LinkScan/8\.1a Unix|LinkWalker|LNSpiderguy|lwp\-trivial|magpie|Mata Hari|MaxPointCrawler|MegaIndex|Microsoft URL Control|MIIxpc|Mippin|Missigua Locator|Mister PiX|MJ12bot|moget|MSIECrawler|NetAnts|NICErsPRO|Niki\-Bot|NPBot|Nutch|Offline Explorer|Openfind|panscient\.com|PHP/5\.\{|ProPowerBot/2\.14|ProWebWalker|Python\-urllib|QueryN Metasearch|RepoMonkey|RMA|SemrushBot|SISTRIX|sitecheck\.Internetseer\.com|SiteSnagger|SnapPreviewBot|Sogou|SpankBot|spanner|spbot|Spinn3r|suzuran|Szukacz/1\.4|Teleport|Telesoft|The Intraformant|TheNomad|TightTwatBot|Titan|toCrawl/UrlDispatcher|True_Robot|turingos|TurnitinBot|UbiCrawler|UnisterBot|URLy Warning|VCI|WBSearchBot|Web Downloader/6\.9|Web Image Collector|WebAuto|WebBandit|WebCopier|WebEnhancer|WebmasterWorldForumBot|WebReaper|WebSauger|Website Quester|Webster Pro|WebStripper|WebZip|Wotbox|wsr\-agent|WWW\-Collector\-E|Xenu|Zao|Zeus|ZyBORG|coccoc|Incutio|lmspider|memoryBot|SemrushBot|serf|Unknown|uptime files" bad_bot
+SetEnvIfNoCase Referer "Abonti|aggregator|AhrefsBot|asterias|BDCbot|BLEXBot|BuiltBotTough|Bullseye|BunnySlippers|ca\-crawler|CCBot|Cegbfeieh|CheeseBot|CherryPicker|CopyRightCheck|cosmos|Crescent|discobot|DittoSpyder|DotBot|Download Ninja|EasouSpider|EmailCollector|EmailSiphon|EmailWolf|EroCrawler|Exabot|ExtractorPro|Fasterfox|FeedBooster|Foobot|Genieo|grub\-client|Harvest|hloader|httplib|HTTrack|humanlinks|ieautodiscovery|InfoNaviRobot|IstellaBot|Java/1\.|JennyBot|k2spider|Kenjin Spider|Keyword Density/0\.9|larbin|LexiBot|libWeb|libwww|LinkextractorPro|linko|LinkScan/8\.1a Unix|LinkWalker|LNSpiderguy|lwp\-trivial|magpie|Mata Hari|MaxPointCrawler|MegaIndex|Microsoft URL Control|MIIxpc|Mippin|Missigua Locator|Mister PiX|MJ12bot|moget|MSIECrawler|NetAnts|NICErsPRO|Niki\-Bot|NPBot|Nutch|Offline Explorer|Openfind|panscient\.com|PHP/5\.\{|ProPowerBot/2\.14|ProWebWalker|Python\-urllib|QueryN Metasearch|RepoMonkey|RMA|SemrushBot|SISTRIX|sitecheck\.Internetseer\.com|SiteSnagger|SnapPreviewBot|Sogou|SpankBot|spanner|spbot|Spinn3r|suzuran|Szukacz/1\.4|Teleport|Telesoft|The Intraformant|TheNomad|TightTwatBot|Titan|toCrawl/UrlDispatcher|True_Robot|turingos|TurnitinBot|UbiCrawler|UnisterBot|URLy Warning|VCI|WBSearchBot|Web Downloader/6\.9|Web Image Collector|WebAuto|WebBandit|WebCopier|WebEnhancer|WebmasterWorldForumBot|WebReaper|WebSauger|Website Quester|Webster Pro|WebStripper|WebZip|Wotbox|wsr\-agent|WWW\-Collector\-E|Xenu|Zao|Zeus|ZyBORG|coccoc|Incutio|lmspider|memoryBot|SemrushBot|serf|Unknown|uptime files" bad_bot
+Deny from env=bad_bot
+# END Kötü bot engelleyici
 # END WordPress
